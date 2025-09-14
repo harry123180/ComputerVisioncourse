@@ -11,6 +11,16 @@
 ![輸入python](img/輸入python.png)
 
 
+![輸入python](img/安裝VScode.png)
+
+
+![輸入python](img/於VScode中搜尋python.png)
+
+
+![輸入python](img/安裝python套件.png)
+
+
+
 ## 前置需求
 
 ### 必要軟體
