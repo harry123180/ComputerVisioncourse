@@ -5,9 +5,12 @@
 ![Python 安裝畫面](img/安裝python.png)
 
 
-
-
 ![開啟CMD](img/開啟CMD.png)
+
+
+![輸入python](img/輸入python.png)
+
+
 ## 前置需求
 
 ### 必要軟體
