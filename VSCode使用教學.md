@@ -2,7 +2,7 @@
 
 ## 教學概述
 本教學將指導您如何在 Visual Studio Code 中使用 Python 3 建立、執行和除錯 Python 應用程式，並學習使用虛擬環境、套件管理等技能。
-
+![Python 安裝畫面](img/image.png)
 ## 前置需求
 
 ### 必要軟體
