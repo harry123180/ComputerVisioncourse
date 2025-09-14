@@ -2,25 +2,91 @@
 
 ## 教學概述
 本教學將指導您如何在 Visual Studio Code 中使用 Python 3 建立、執行和除錯 Python 應用程式，並學習使用虛擬環境、套件管理等技能。
+
+一、安裝python
 ![Python 安裝畫面](img/安裝python.png)
 
 
+二、開啟CMD
 ![開啟CMD](img/開啟CMD.png)
 
 
+三、查看python版本
 ![輸入python](img/輸入python.png)
 
 
+四、安裝VScode
 ![輸入python](img/安裝VScode.png)
 
 
+五、於VScode中搜尋Python並安裝套件
 ![輸入python](img/於VScode中搜尋python.png)
 
 
 ![輸入python](img/安裝python套件.png)
 
+六、於桌面新增資料夾
+
+七、透過VScode將資料夾打開
 
 
+![輸入python](img/新增py檔.png)
+
+
+八、輸入print並執行
+![輸入python](img/輸入print.png)
+
+
+## Venv虛擬環境建置
+一、於桌面新增第二個資料夾
+二、於桌面新增資料夾並於路徑欄位輸入CMD
+
+
+![輸入python](img/新增料夾輸入CMD.png)
+
+
+三、輸入python-m vene<環境名稱>以建立虛擬環境
+
+![輸入python](img/環境名稱.png)
+
+四、回終端機並輸入cd<環境名稱>/scripts
+
+
+![輸入python](img/環境名稱2.png)
+
+
+五、輸入activate.bat啟動環境
+
+![輸入python](img/啟動環境.png)
+
+
+![輸入python](img/啟動環境2.png)
+
+六、查看pip套件指令 輸入 pip list
+
+![輸入python](img/查看pip套件.png)
+
+七、安裝pip套件指令 輸入 pip install <套件名稱>
+
+![輸入python](img/pip安裝套件指令.png)
+
+![輸入python](img/pip安裝套件指令2.png)
+
+## VSCode虛擬環境選取
+一、進入VSCode中並點擊右下角版本選項
+
+![輸入python](img/VScode右下角版本選項.png)
+
+二、點擊Enter interpreter path選項
+
+
+![輸入python](img/點擊enter.png)
+
+
+三、點擊Find 並選取python.exe
+
+![輸入python](img/選取venv.png)
+完成虛擬環境選取，成功抓到虛擬環境會顯示Python版本(環境名稱)於右下角。
 ## 前置需求
 
 ### 必要軟體
