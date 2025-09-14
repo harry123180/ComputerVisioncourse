@@ -64,7 +64,9 @@
 
 六、查看pip套件指令 輸入 pip list
 
+
 ![輸入python](img/查看pip套件.png)
+
 
 七、安裝pip套件指令 輸入 pip install <套件名稱>
 
