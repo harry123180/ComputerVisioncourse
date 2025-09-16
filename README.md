@@ -64,13 +64,15 @@
 
 ---
 
-## 專案結構 (建議)
+## 專案結構 
+```
 ComputerVisioncourse/
-├── day1/ # Python 與 OpenCV 基礎
-├── day2/ # Mediapipe & Teachable Machine
-├── day3/ # YOLO & PyTorch 模型訓練
-├── examples/ # 範例程式碼
+├── day1/       # Python 與 OpenCV 基礎
+├── day2/       # Mediapipe & Teachable Machine
+├── day3/       # YOLO & PyTorch 模型訓練
+├── examples/   # 範例程式碼
 └── README.md
+```
 
 yaml
 複製程式碼
