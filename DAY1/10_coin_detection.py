@@ -10,8 +10,7 @@ print("="*50)
 print("\n步驟 1: 讀取圖片")
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
-img_path = os.path.join(parent_dir, 'bright front and back', 'WIN_20250914_16_53_29_Pro.jpg')
-
+img_path = "D:\\AWORKSPACE\\Github\\ComputerVisioncourse\\DAY1\\backlight\\WIN_20250914_16_47_17_Pro.jpg"
 print(f"讀取圖片: {os.path.basename(img_path)}")
 img = cv2.imread(img_path)
 
