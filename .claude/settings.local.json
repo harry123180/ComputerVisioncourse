@@ -5,7 +5,9 @@
       "Bash(conda activate:*)",
       "Bash(pip install:*)",
       "Bash(conda:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "WebSearch",
+      "WebFetch(domain:mech.stust.edu.tw)"
     ],
     "deny": [],
     "ask": []
