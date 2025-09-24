@@ -74,7 +74,7 @@ if __name__ == "__main__":
     current_dir = Path(__file__).parent
     
     # 方式1: 使用絕對路徑
-    zip_file = r"D:\AWORKSPACE\Github\ComputerVisioncourse\DAY3\rock-paper-scissors.v14i.yolov11.zip"
+    zip_file = r"D:\AWORKSPACE\Github\ComputerVisioncourse\DAY3\My First Project.v1i.yolov11.zip"
     
     # 方式2: 使用相對路徑（如果zip在同目錄）
     # zip_file = current_dir / "rock-paper-scissors.v14i.yolov11.zip"
@@ -98,7 +98,7 @@ if __name__ == "__main__":
     
     # 開始訓練
     print("開始CPU訓練...")
-    results = train_yolov11_gpu(data_yaml)
+    results = train_yolov11_cpu(data_yaml)
     
     # 取得最佳模型路徑
     best_model = Path('runs/train/yolov11_cpu/weights/best.pt')
