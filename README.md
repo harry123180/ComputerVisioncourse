@@ -1,4 +1,4 @@
-﻿# Computer Vision Course
+# Computer Vision Course
 
 這個倉庫整理了 6 天課程的示範程式碼與素材，由 **harry123180** 維護。每一天都對應一個主題，從 OpenCV 入門、Mediapipe 姿勢辨識，到 YOLO 模型微調與 CustomTkinter 圖形界面整合。
 
@@ -33,10 +33,24 @@
 - 腳本：`smart_inspection_app.py`
 
 ## 資料夾結構
-- `DAY1` ~ `DAY6`：每日主題程式碼與說明文件
-- `Code/`：早期範例與模型檔，可作參考或資源補充
-- `Front/`、`Back/`、`img/`、`video/`：課程使用的影像與影片素材
-- `output/`、`ppts/`：產出成果與簡報
+```
+ComputerVisioncourse/
+├── DAY1 ~ DAY6/           # 每日主題程式碼與說明文件
+├── tools/                  # 工具程式與模型檔
+│   ├── tool01_camera_basic.py      # 基礎攝影機開啟
+│   ├── tool02_contour_basic.py     # 基礎輪廓偵測
+│   ├── tool03_contour_area.py      # 輪廓面積計算
+│   ├── tool04_coin_pipeline.py     # 硬幣偵測完整流程
+│   ├── tool05_roi_capture_simple.py # ROI 擷取工具（簡易版）
+│   ├── tool06_roi_capture_advanced.py # ROI 擷取工具（進階版）
+│   ├── model_coin_classifier.h5    # Keras 硬幣分類模型
+│   └── model_labels.txt            # 模型標籤檔
+├── calibration_chessboard/ # 相機校正用棋盤圖片
+├── Front/, Back/          # 硬幣正反面訓練素材
+├── img/, video/           # 課程使用的影像與影片素材
+├── output/, ppts/         # 產出成果與簡報
+└── .gitignore             # Git 忽略設定
+```
 
 ## 推薦學習流程
 1. 依序閱讀各日 `README.md`，並執行對應腳本體驗功能。

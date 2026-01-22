@@ -1,4 +1,4 @@
-﻿"""Day 1 Step 01: 讀取並顯示教學影像"""
+"""Day 1 Step 01: 讀取並顯示教學影像"""
 from pathlib import Path
 import cv2
 
@@ -8,13 +8,15 @@ import cv2
 def get_sample_image() -> Path:
     """尋找範例照片並回傳路徑"""
     day_dir = Path(__file__).resolve().parent
-    # 優先使用課程提供的正面照片
-    candidates = list((day_dir / "bright front and back").glob("*.jpg"))
+    images_dir = day_dir / "images"
+
+    # 優先使用正面打光照片（可看到硬幣細節）
+    candidates = list((images_dir / "frontlit_detail").glob("*.jpg"))
     if not candidates:
-        # 找不到預設照片時改用資料夾內第一張 JPG
-        candidates = list(day_dir.glob("*.jpg"))
+        # 備用：背光剪影照片
+        candidates = list((images_dir / "backlit_silhouette").glob("*.jpg"))
     if not candidates:
-        raise FileNotFoundError("請在 DAY1 資料夾放入範例 JPG 圖片")
+        raise FileNotFoundError("請在 DAY1/images 資料夾放入範例 JPG 圖片")
     return candidates[0]
 
 
