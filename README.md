@@ -46,7 +46,9 @@ ComputerVisioncourse/
 │   ├── model_coin_classifier.h5    # Keras 硬幣分類模型
 │   └── model_labels.txt            # 模型標籤檔
 ├── calibration_chessboard/ # 相機校正用棋盤圖片
-├── Front/, Back/          # 硬幣正反面訓練素材
+├── training_data/          # ML 訓練素材
+│   ├── Front/              # 零件正面 224x224 ROI
+│   └── Back/               # 零件背面 224x224 ROI
 ├── img/, video/           # 課程使用的影像與影片素材
 ├── output/, ppts/         # 產出成果與簡報
 └── .gitignore             # Git 忽略設定

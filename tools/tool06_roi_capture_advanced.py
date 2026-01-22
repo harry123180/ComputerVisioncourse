@@ -35,9 +35,9 @@ class ContourCaptureApp:
         self.start_camera()
         
     def create_directories(self):
-        """創建Front和Back資料夾"""
-        os.makedirs("Front", exist_ok=True)
-        os.makedirs("Back", exist_ok=True)
+        """創建training_data/Front和training_data/Back資料夾"""
+        os.makedirs("training_data/Front", exist_ok=True)
+        os.makedirs("training_data/Back", exist_ok=True)
         
     def get_next_filename(self, folder):
         """取得下一個可用的檔案編號"""
@@ -303,7 +303,7 @@ class ContourCaptureApp:
     def capture_image(self):
         """拍照並儲存"""
         if self.roi_frame is not None:
-            folder = self.mode
+            folder = f"training_data/{self.mode}"
             filename = self.get_next_filename(folder)
             filepath = os.path.join(folder, filename)
             
