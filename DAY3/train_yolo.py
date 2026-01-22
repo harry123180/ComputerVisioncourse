@@ -13,7 +13,7 @@ except ImportError as exc:  # pragma: no cover
 def main() -> None:
     """以 Roboflow 匯出的資料集進行快速微調"""
     day_dir = Path(__file__).resolve().parent
-    data_yaml = day_dir / "dataset_extracted" / "data.yaml"
+    data_yaml = day_dir / "dataset/extracted" / "data.yaml"
     if not data_yaml.exists():
         raise FileNotFoundError("找不到 data.yaml，請先解壓縮資料集")
 

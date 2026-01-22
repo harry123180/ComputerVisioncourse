@@ -20,7 +20,7 @@ def main() -> None:
 
     model = YOLO(str(weight_files[0]))
 
-    valid_images = sorted((day_dir / "dataset_extracted" / "valid" / "images").glob("*.*"))
+    valid_images = sorted((day_dir / "dataset/extracted" / "valid" / "images").glob("*.*"))
     if not valid_images:
         raise FileNotFoundError("驗證集沒有圖片，請確認資料集完整")
 

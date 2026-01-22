@@ -18,7 +18,8 @@ DAY1/
 ├── step06_detect_circles.py # 霍夫圓形偵測
 ├── images/                # 來源影像資料夾
 │   ├── frontlit_detail/   # 正面打光（可見硬幣細節）
-│   └── backlit_silhouette/ # 背光剪影（高對比輪廓）
+│   ├── backlit_silhouette/ # 背光剪影（高對比輪廓）
+│   └── lowlight_ambient/  # 低光環境（練習低對比偵測）
 └── output/                # 程式輸出結果
 ```
 
@@ -69,6 +70,13 @@ python step02_to_grayscale.py
 | `backlit_14coins_01.jpg` | 14 枚硬幣 |
 
 ![背光剪影範例](images/backlit_silhouette/backlit_06coins_01.jpg)
+
+### 低光環境 (`lowlight_ambient/`)
+在較暗的環境光下拍攝，適合練習低對比場景的偵測。
+
+| 檔名範例 | 說明 |
+|----------|------|
+| `lowlight_01.jpg` ~ `lowlight_12.jpg` | 12 張低光環境硬幣照片 |
 
 ---
 

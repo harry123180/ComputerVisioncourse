@@ -10,9 +10,9 @@ import numpy as np
 def load_raw_image() -> np.ndarray:
     """載入 BMP 原始圖，若為 BGR 會轉為 RGB"""
     day_dir = Path(__file__).resolve().parent
-    image_path = day_dir / "Image_20250924142436723.bmp"
+    image_path = day_dir / "images" / "high_res_sample.bmp"
     if not image_path.exists():
-        raise FileNotFoundError("找不到示範圖片 Image_20250924142436723.bmp")
+        raise FileNotFoundError("找不到示範圖片 images/high_res_sample.bmp")
 
     image = cv2.imread(str(image_path), cv2.IMREAD_UNCHANGED)
     if image is None:
@@ -58,7 +58,7 @@ def main() -> None:
     annotated, count = detect_circles(image)
     print(f"偵測到 {count} 個圓形")
 
-    output_path = Path(__file__).resolve().parent / "circle_result.png"
+    output_path = Path(__file__).resolve().parent / "output" / "circle_result.png"
     cv2.imwrite(str(output_path), cv2.cvtColor(annotated, cv2.COLOR_RGB2BGR))
     print(f"結果已輸出到 {output_path.name}")
 
