@@ -3,6 +3,21 @@
 - **作者**：harry123180
 - **主題**：熟悉影像讀取、轉換、幾何操作與簡易檢測
 
+## 學習目標
+
+完成 DAY1 後，學員能夠：
+
+1. 用 OpenCV 讀取 / 顯示 / 儲存影像，並理解 BGR vs RGB 的差異
+2. 掌握常見前處理流程：灰階、縮放、高斯模糊
+3. 能在影像上繪製圖形與文字，做為標註輸出基礎
+4. 能使用 Canny 邊緣偵測與霍夫圓形偵測做簡單的物件定位
+5. 建立「讀檔 → 前處理 → 偵測 → 標註 → 輸出」的完整思維流程
+
+## 先備知識
+
+- Python 基礎語法（函式、迴圈、路徑操作）
+- 命令列基本操作（啟動虛擬環境、`pip install`）
+
 ---
 
 ## 資料夾結構
@@ -193,14 +208,28 @@ circles = cv2.HoughCircles(
 
 **檔案**：`step07_dual_camera.py`
 
-同時開啟兩支攝影機：Camera 0 跑 Mediapipe `FaceMesh`，Camera 1 跑 `Pose`，並可用 `v` 鍵切換水平/垂直排列。
+同時開啟兩支攝影機：Camera 0 跑 Mediapipe `FaceMesh`（臉部 468 個網格點 + 虹膜），Camera 1 跑 `Pose`（人體 33 個骨架點），示範如何在同一程式中整合多個 Mediapipe 模型。
 
 ```bash
 pip install mediapipe
 python step07_dual_camera.py
 ```
 
-> 需兩支可用攝影機（內建 + 外接）。按 ESC 離開、按 `v` 切換版面。此範例做為 DAY2 Mediapipe 章節的前導暖身。
+**操作鍵**：
+
+| 按鍵 | 功能 |
+|------|------|
+| `ESC` | 結束程式 |
+| `v`   | 切換「水平並排 / 垂直堆疊」版面 |
+
+**程式重點**：
+
+- `cv2.VideoCapture(0)` / `cv2.VideoCapture(1)` 分別代表內建與外接攝影機（順序視作業系統而定）
+- Mediapipe 需要 RGB 輸入，所以需 `cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)`
+- 設 `rgb.flags.writeable = False` 可讓 Mediapipe 免於複製資料，提升效能
+- 最終透過 `np.hstack` / `np.vstack` 拼接兩張 frame 做顯示
+
+> 此範例做為 DAY2 Mediapipe 章節的前導暖身。若你的電腦只有一支攝影機，可先略過 step07，直接進 DAY2 的單鏡頭範例。
 
 ---
 
@@ -239,3 +268,31 @@ python step07_dual_camera.py
 - `step07` 需要兩支實體攝影機，並額外安裝 `mediapipe`
 - 輸出結果統一存放於 `output/` 資料夾
 - 建議在教學時逐步執行，讓學員確認每個處理階段的效果
+
+---
+
+## 常見問題
+
+### Q1：`cv2.imread()` 回傳 `None`？
+- 檔案路徑含中文或空白：改用 `cv2.imdecode(np.fromfile(path, np.uint8), cv2.IMREAD_COLOR)`
+- 副檔名錯誤（.JPG vs .jpg）：`Path.glob("*.jpg")` 在 Windows 不分大小寫，Linux 分；請檢查真實檔名
+
+### Q2：`cv2.imshow()` 視窗打開後立即關閉？
+- 少了 `cv2.waitKey(0)`（會一打開就關）。`waitKey(0)` 代表等待任意鍵
+
+### Q3：HoughCircles 偵測不到圓、或誤判太多？
+- 先把影像縮到 `1024px` 以內避免計算量爆炸
+- 調 `param2`：值越低越容易偵測（也越多雜訊）；值越高越嚴格
+- 調 `minRadius` / `maxRadius` 限制搜尋範圍
+- 在低光影像（`lowlight_ambient/`）先套 `cv2.equalizeHist` 或 CLAHE 提升對比
+
+### Q4：輸出圖的顏色偏藍/偏黃？
+- OpenCV 預設使用 **BGR**，若你直接丟進 matplotlib（RGB）會色彩反轉；記得先 `cv2.cvtColor(image, cv2.COLOR_BGR2RGB)`
+
+---
+
+## 延伸任務
+
+- 寫一個 `step08_count_coins.py`，結合 step05 + step06 計算硬幣數量並疊加於畫面
+- 將 step06 改為讀取整個 `lowlight_ambient/` 資料夾，比較偵測準確率
+- 嘗試替換成你自己的硬幣或圓形物體照片
