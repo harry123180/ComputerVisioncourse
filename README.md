@@ -19,6 +19,7 @@
 ### DAY1：OpenCV 入門
 - 影像讀取、灰階、縮放、繪圖、邊緣與圓形偵測
 - 腳本：`step01_read_image.py` ~ `step06_detect_circles.py`
+- 延伸：`step07_dual_camera.py`（雙攝影機 + Mediapipe，銜接 DAY2）
 
 ### DAY2：Mediapipe 姿勢分析
 - 即時骨架繪製、影片批次角度統計、深蹲次數估算
@@ -50,7 +51,8 @@ ComputerVisioncourse/
 ├── DAY1/                      # OpenCV 入門
 │   ├── images/                # 來源影像（硬幣照片）
 │   ├── output/                # 處理結果
-│   └── step01~06_*.py         # 範例腳本
+│   ├── step01~06_*.py         # 範例腳本
+│   └── step07_dual_camera.py  # 雙攝影機 + Mediapipe（銜接 DAY2）
 │
 ├── DAY2/                      # Mediapipe 姿勢分析
 │   └── pose_*.py              # 姿勢分析腳本
@@ -87,10 +89,15 @@ ComputerVisioncourse/
 │   └── setup_guide/           # 環境設定截圖
 │
 ├── ppts/                      # 課程簡報
+│
+├── yolo11n.pt                 # Ultralytics 預訓練權重（備用）
+├── requirements.txt           # 根目錄統一依賴
 ├── .gitignore
 ├── AGENTS.md
 └── README.md
 ```
+
+> `yolo11n.pt` 是首次執行 ultralytics 時自動下載的預訓練權重。DAY3 也會在 `DAY3/models/` 產生一份，兩者擇一使用即可。
 
 ---
 
@@ -111,13 +118,15 @@ python -m venv .venv
 # 啟動虛擬環境 (Windows)
 .venv\Scripts\activate
 
-# 安裝基本套件
-pip install opencv-python numpy
+# 安裝全部課程依賴
+pip install -r requirements.txt
 
 # 進入 DAY1 開始學習
 cd DAY1
 python step01_read_image.py
 ```
+
+> 若只想體驗單一日程，也可直接執行 `pip install -r DAYx/requirements.txt`（若該日有提供）。
 
 ---
 

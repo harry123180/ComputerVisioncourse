@@ -20,9 +20,11 @@ DAY3/
 │       ├── train/
 │       ├── valid/
 │       └── test/
-├── models/                # 預訓練權重（執行 download_weights.py 後產生）
-└── runs/                  # 訓練與推論輸出
+├── models/                # 預訓練權重（執行 download_weights.py 後產生 yolo11n.pt）
+└── runs/                  # 訓練與推論輸出（執行 train_yolo.py / infer_image.py 後產生）
 ```
+
+> `models/` 目前放置 `.gitkeep` 佔位，初次 clone 時為空資料夾屬正常。
 
 ---
 

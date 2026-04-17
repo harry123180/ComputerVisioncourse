@@ -16,6 +16,7 @@ DAY1/
 ├── step04_draw_shapes.py  # 繪製圖形標註
 ├── step05_detect_edges.py # Canny 邊緣偵測
 ├── step06_detect_circles.py # 霍夫圓形偵測
+├── step07_dual_camera.py   # 雙攝影機 + Mediapipe (FaceMesh / Pose)
 ├── images/                # 來源影像資料夾
 │   ├── frontlit_detail/   # 正面打光（可見硬幣細節）
 │   ├── backlit_silhouette/ # 背光剪影（高對比輪廓）
@@ -188,6 +189,21 @@ circles = cv2.HoughCircles(
 
 ---
 
+### Step 07：雙攝影機 + Mediapipe（銜接 DAY2）
+
+**檔案**：`step07_dual_camera.py`
+
+同時開啟兩支攝影機：Camera 0 跑 Mediapipe `FaceMesh`，Camera 1 跑 `Pose`，並可用 `v` 鍵切換水平/垂直排列。
+
+```bash
+pip install mediapipe
+python step07_dual_camera.py
+```
+
+> 需兩支可用攝影機（內建 + 外接）。按 ESC 離開、按 `v` 切換版面。此範例做為 DAY2 Mediapipe 章節的前導暖身。
+
+---
+
 ## 處理流程圖
 
 ```
@@ -219,7 +235,7 @@ circles = cv2.HoughCircles(
 
 ## 備註
 
-- 所有腳本自動從 `images/frontlit_detail/` 讀取第一張 JPG 圖片
-- 若該資料夾為空，會改用 `images/backlit_silhouette/` 的圖片
+- `step01` ~ `step06` 自動從 `images/frontlit_detail/` 讀取第一張 JPG 圖片；若該資料夾為空，會改用 `images/backlit_silhouette/`
+- `step07` 需要兩支實體攝影機，並額外安裝 `mediapipe`
 - 輸出結果統一存放於 `output/` 資料夾
 - 建議在教學時逐步執行，讓學員確認每個處理階段的效果

@@ -11,6 +11,7 @@
 DAY6/
 ├── README.md
 ├── smart_inspection_app.py  # 主程式
+├── smart_vision_tool.spec   # PyInstaller 打包設定
 └── assets/                  # 應用程式資源
     ├── application.png      # 應用圖示（PNG）
     └── application.ico      # 應用圖示（ICO）
@@ -69,3 +70,17 @@ python smart_inspection_app.py
 - 加入攝影機即時串流模式，模擬產線檢測
 - 搭配 DAY5 的介面改造，加入報表輸出與歷史紀錄
 - 使用 `assets/` 中的圖示，打包成獨立桌面應用程式
+
+---
+
+## 打包獨立執行檔（選用）
+
+附上 `smart_vision_tool.spec`，可用 [PyInstaller](https://pyinstaller.org/) 打包成單一 `.exe`：
+
+```bash
+pip install pyinstaller
+pyinstaller smart_vision_tool.spec
+```
+
+打包完成後會在 `dist/smart_vision_tool/` 取得可執行檔，圖示自動套用 `assets/application.ico`。
+

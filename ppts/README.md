@@ -4,11 +4,14 @@
 
 ## 檔案說明
 
-| 檔案 | 對應課程 |
-|------|----------|
-| `course-Day1.pptx` | DAY1：OpenCV 入門 |
-| `course-Day2.pptx` | DAY2：Mediapipe 姿勢分析 |
-| `course-Day4.pptx` | DAY4：高解析影像處理 |
+| 檔案 | 對應課程 | 狀態 |
+|------|----------|------|
+| `course-Day1.pptx` | DAY1：OpenCV 入門 | ✅ 已完成 |
+| `course-Day2.pptx` | DAY2：Mediapipe 姿勢分析 | ✅ 已完成 |
+| `course-Day3.pptx` | DAY3：YOLO11 微調 | ✅ 已完成 |
+| `course-Day4.pptx` | DAY4：高解析影像處理 | ✅ 已完成 |
+| `course-Day5.pptx` | DAY5：CustomTkinter GUI | ⏳ 待補 |
+| `course-Day6.pptx` | DAY6：智慧檢測整合 | ⏳ 待補 |
 
 ## 備註
 

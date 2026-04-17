@@ -1,0 +1,22 @@
+# Computer Vision Course - 六日課程完整依賴
+# 依需求可在各 DAY 資料夾另有更精簡的 requirements.txt
+
+# DAY1 / DAY4 / tools - OpenCV 基礎
+opencv-python>=4.9
+numpy>=1.24
+
+# DAY2 - Mediapipe 姿勢辨識
+mediapipe>=0.10
+
+# DAY3 - YOLO11 微調
+ultralytics>=8.2
+
+# DAY5 / DAY6 - GUI
+customtkinter>=5.2
+Pillow>=10.0
+
+# tools/ - 硬幣分類模型載入用
+tensorflow==2.15.0
+
+# DAY6 打包（選用）
+# pyinstaller>=6.0

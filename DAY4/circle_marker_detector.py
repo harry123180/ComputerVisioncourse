@@ -59,6 +59,7 @@ def main() -> None:
     print(f"偵測到 {count} 個圓形")
 
     output_path = Path(__file__).resolve().parent / "output" / "circle_result.png"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     cv2.imwrite(str(output_path), cv2.cvtColor(annotated, cv2.COLOR_RGB2BGR))
     print(f"結果已輸出到 {output_path.name}")
 
